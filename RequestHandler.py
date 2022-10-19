@@ -33,6 +33,7 @@ class RequestHandler:
         self.extract_post_data()
         self.extract_host()
         self.extract_endpoint()
+
     def __str__(self):
         data = f"\nRequest File: {self.request_file}\n"
         data += "\nRequest Data: "
@@ -47,6 +48,7 @@ class RequestHandler:
         endpoint = self.request_lines[0]
         endpoint = endpoint.split(" ")
         self.endpoint = endpoint[1]
+
 
 if __name__ == '__main__':
     handler = RequestHandler("request.txt")
