@@ -1,8 +1,4 @@
-import difflib
-
 import requests
-from bs4 import BeautifulSoup
-import difflib
 import re
 
 

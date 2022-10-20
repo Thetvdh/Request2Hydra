@@ -1,6 +1,5 @@
 import argparse
 import os
-import pathlib
 from RequestHandler import RequestHandler
 
 
