@@ -17,9 +17,10 @@ class Request2Hydra:
         self.parsed_post_data = self.parse_post_data()
         self.failure = self.request_handler.get_failure_message()
         self.flags = []
+        self.string_flags = ""
         self.parse_flags()
         self.command = f'hydra {self.flags[0]} {self.username} {self.flags[1]} {self.password} {self.host} ' \
-                       f'http-post-form "{self.endpoint}:{self.parsed_post_data}:{self.failure}" -V {self.flags[2]}' \
+                       f'http-post-form "{self.endpoint}:{self.parsed_post_data}:{self.failure}" -V {self.string_flags}' \
 
 
     def __str__(self):
@@ -48,6 +49,9 @@ class Request2Hydra:
             self.flags.append("-p")
         if self.port is not None:
             self.flags.append(f"-s {self.port}")
+
+        for i in range(2, len(self.flags)):
+            self.string_flags = "".join(self.flags[i])
 
     def parse_post_data(self):
         output = ""
