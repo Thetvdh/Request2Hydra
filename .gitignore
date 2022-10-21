@@ -1,4 +1,4 @@
 ProjectFiles
 venv
-request.txt
+*.txt
 MockServer
